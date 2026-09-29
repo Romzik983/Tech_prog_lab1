@@ -26,6 +26,8 @@ data = {
     "Детали ОС": None ,
     "Оболочка командной строки": None,
     "Версия ОС": platform.release(),
+
+    "Зарядка (ноутбук)": psutil.sensors_battery(),
     
     "Архитектура CPU": platform.machine(),
     "Модель процессора": platform.processor(),
@@ -47,7 +49,7 @@ data = {
     "Список пользователей, вошедших в систему (null - пользователи, к которым нет доступа; время - время с 1 января 1970 года)": psutil.users(),
     "Имя пользователя": None,
     "Hostname": platform.node(),
-    "Список папок, где ОС ищет исполняемые файлы программы": os.environ.get('PATH'),
+    "Системная переменная окружения 'PATH'": os.environ.get('PATH'),
     "Путь к домашней папке пользователя": None,
 
     "Запущенные процессы, которые занимают больше 100 Мб оперативной памяти": process,
@@ -57,8 +59,6 @@ data = {
     "Реализация Python": platform.python_implementation(),
     
     "ID процесса": os.getpid(),
-
-    "Зарядка (ноутбук)": psutil.sensors_battery(),
 }    
 
 if system == 'Linux':
